@@ -1,0 +1,95 @@
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cckeNNvh.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"memorymap.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/memorymap.c"
+  20              		.section	.text.MX_MEMORYMAP_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	MX_MEMORYMAP_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	MX_MEMORYMAP_Init:
+  28              	.LFB950:
+   1:Core/Src/memorymap.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/memorymap.c **** /**
+   3:Core/Src/memorymap.c ****   ******************************************************************************
+   4:Core/Src/memorymap.c ****   * @file    memorymap.c
+   5:Core/Src/memorymap.c ****   * @brief   This file provides code for the configuration
+   6:Core/Src/memorymap.c ****   *          of the MEMORYMAP instances.
+   7:Core/Src/memorymap.c ****   ******************************************************************************
+   8:Core/Src/memorymap.c ****   * @attention
+   9:Core/Src/memorymap.c ****   *
+  10:Core/Src/memorymap.c ****   * Copyright (c) 2023 STMicroelectronics.
+  11:Core/Src/memorymap.c ****   * All rights reserved.
+  12:Core/Src/memorymap.c ****   *
+  13:Core/Src/memorymap.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/memorymap.c ****   * in the root directory of this software component.
+  15:Core/Src/memorymap.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/memorymap.c ****   *
+  17:Core/Src/memorymap.c ****   ******************************************************************************
+  18:Core/Src/memorymap.c ****   */
+  19:Core/Src/memorymap.c **** /* USER CODE END Header */
+  20:Core/Src/memorymap.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/memorymap.c **** #include "memorymap.h"
+  22:Core/Src/memorymap.c **** 
+  23:Core/Src/memorymap.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/memorymap.c **** 
+  25:Core/Src/memorymap.c **** /* USER CODE END 0 */
+  26:Core/Src/memorymap.c **** 
+  27:Core/Src/memorymap.c **** /* MEMORYMAP init function */
+  28:Core/Src/memorymap.c **** void MX_MEMORYMAP_Init(void)
+  29:Core/Src/memorymap.c **** {
+  29              		.loc 1 29 1 view -0
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cckeNNvh.s 			page 2
+
+
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  30:Core/Src/memorymap.c **** 
+  31:Core/Src/memorymap.c ****   /* USER CODE BEGIN MEMORYMAP_Init 0 */
+  32:Core/Src/memorymap.c **** 
+  33:Core/Src/memorymap.c ****   /* USER CODE END MEMORYMAP_Init 0 */
+  34:Core/Src/memorymap.c **** 
+  35:Core/Src/memorymap.c ****   /* USER CODE BEGIN MEMORYMAP_Init 1 */
+  36:Core/Src/memorymap.c **** 
+  37:Core/Src/memorymap.c ****   /* USER CODE END MEMORYMAP_Init 1 */
+  38:Core/Src/memorymap.c ****   /* USER CODE BEGIN MEMORYMAP_Init 2 */
+  39:Core/Src/memorymap.c **** 
+  40:Core/Src/memorymap.c ****   /* USER CODE END MEMORYMAP_Init 2 */
+  41:Core/Src/memorymap.c **** 
+  42:Core/Src/memorymap.c **** }
+  34              		.loc 1 42 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE950:
+  39              		.text
+  40              	.Letext0:
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\cckeNNvh.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 memorymap.c
+C:\Users\Kevin\AppData\Local\Temp\cckeNNvh.s:21     .text.MX_MEMORYMAP_Init:0000000000000000 $t
+C:\Users\Kevin\AppData\Local\Temp\cckeNNvh.s:27     .text.MX_MEMORYMAP_Init:0000000000000000 MX_MEMORYMAP_Init
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,165 @@
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"DWT_Delay.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/DWT_Delay.c"
+  20              		.section	.text.DWT_Delay_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	DWT_Delay_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	DWT_Delay_Init:
+  28              	.LFB952:
+   1:Core/Src/DWT_Delay.c **** /*
+   2:Core/Src/DWT_Delay.c ****  * File: DWT_Delay.c
+   3:Core/Src/DWT_Delay.c ****  * Driver Name: [[ DWT Delay ]]
+   4:Core/Src/DWT_Delay.c ****  * SW Layer:   ECUAL
+   5:Core/Src/DWT_Delay.c ****  * Created on: Jun 28, 2020
+   6:Core/Src/DWT_Delay.c ****  * Author:     Khaled Magdy
+   7:Core/Src/DWT_Delay.c ****  * -------------------------------------------
+   8:Core/Src/DWT_Delay.c ****  * For More Information, Tutorials, etc.
+   9:Core/Src/DWT_Delay.c ****  * Visit Website: www.DeepBlueMbedded.com
+  10:Core/Src/DWT_Delay.c ****  *
+  11:Core/Src/DWT_Delay.c ****  */
+  12:Core/Src/DWT_Delay.c **** 
+  13:Core/Src/DWT_Delay.c **** #include "DWT_Delay.h"
+  14:Core/Src/DWT_Delay.c **** 
+  15:Core/Src/DWT_Delay.c **** 
+  16:Core/Src/DWT_Delay.c **** uint32_t DWT_Delay_Init(void)
+  17:Core/Src/DWT_Delay.c **** {
+  29              		.loc 1 17 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  18:Core/Src/DWT_Delay.c ****     /* Disable TRC */
+  19:Core/Src/DWT_Delay.c ****     CoreDebug->DEMCR &= ~CoreDebug_DEMCR_TRCENA_Msk; // ~0x01000000;
+  34              		.loc 1 19 5 view .LVU1
+  35              		.loc 1 19 14 is_stmt 0 view .LVU2
+  36 0000 104B     		ldr	r3, .L4
+  37 0002 D3F8FC20 		ldr	r2, [r3, #252]
+  38              		.loc 1 19 22 view .LVU3
+  39 0006 22F08072 		bic	r2, r2, #16777216
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s 			page 2
+
+
+  40 000a C3F8FC20 		str	r2, [r3, #252]
+  20:Core/Src/DWT_Delay.c ****     /* Enable TRC */
+  21:Core/Src/DWT_Delay.c ****     CoreDebug->DEMCR |=  CoreDebug_DEMCR_TRCENA_Msk; // 0x01000000;
+  41              		.loc 1 21 5 is_stmt 1 view .LVU4
+  42              		.loc 1 21 14 is_stmt 0 view .LVU5
+  43 000e D3F8FC20 		ldr	r2, [r3, #252]
+  44              		.loc 1 21 22 view .LVU6
+  45 0012 42F08072 		orr	r2, r2, #16777216
+  46 0016 C3F8FC20 		str	r2, [r3, #252]
+  22:Core/Src/DWT_Delay.c **** 
+  23:Core/Src/DWT_Delay.c ****     /* Disable clock cycle counter */
+  24:Core/Src/DWT_Delay.c ****     DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk; //~0x00000001;
+  47              		.loc 1 24 5 is_stmt 1 view .LVU7
+  48              		.loc 1 24 8 is_stmt 0 view .LVU8
+  49 001a A3F55D43 		sub	r3, r3, #56576
+  50 001e 1A68     		ldr	r2, [r3]
+  51              		.loc 1 24 15 view .LVU9
+  52 0020 22F00102 		bic	r2, r2, #1
+  53 0024 1A60     		str	r2, [r3]
+  25:Core/Src/DWT_Delay.c ****     /* Enable  clock cycle counter */
+  26:Core/Src/DWT_Delay.c ****     DWT->CTRL |=  DWT_CTRL_CYCCNTENA_Msk; //0x00000001;
+  54              		.loc 1 26 5 is_stmt 1 view .LVU10
+  55              		.loc 1 26 8 is_stmt 0 view .LVU11
+  56 0026 1A68     		ldr	r2, [r3]
+  57              		.loc 1 26 15 view .LVU12
+  58 0028 42F00102 		orr	r2, r2, #1
+  59 002c 1A60     		str	r2, [r3]
+  27:Core/Src/DWT_Delay.c **** 
+  28:Core/Src/DWT_Delay.c ****     /* Reset the clock cycle counter value */
+  29:Core/Src/DWT_Delay.c ****     DWT->CYCCNT = 0;
+  60              		.loc 1 29 5 is_stmt 1 view .LVU13
+  61              		.loc 1 29 17 is_stmt 0 view .LVU14
+  62 002e 0022     		movs	r2, #0
+  63 0030 5A60     		str	r2, [r3, #4]
+  30:Core/Src/DWT_Delay.c **** 
+  31:Core/Src/DWT_Delay.c ****     /* 3 NO OPERATION instructions */
+  32:Core/Src/DWT_Delay.c ****     __ASM volatile ("NOP");
+  64              		.loc 1 32 5 is_stmt 1 view .LVU15
+  65              		.syntax unified
+  66              	@ 32 "Core/Src/DWT_Delay.c" 1
+  67 0032 00BF     		NOP
+  68              	@ 0 "" 2
+  33:Core/Src/DWT_Delay.c ****     __ASM volatile ("NOP");
+  69              		.loc 1 33 5 view .LVU16
+  70              	@ 33 "Core/Src/DWT_Delay.c" 1
+  71 0034 00BF     		NOP
+  72              	@ 0 "" 2
+  34:Core/Src/DWT_Delay.c ****     __ASM volatile ("NOP");
+  73              		.loc 1 34 5 view .LVU17
+  74              	@ 34 "Core/Src/DWT_Delay.c" 1
+  75 0036 00BF     		NOP
+  76              	@ 0 "" 2
+  35:Core/Src/DWT_Delay.c **** 
+  36:Core/Src/DWT_Delay.c ****     /* Check if clock cycle counter has started */
+  37:Core/Src/DWT_Delay.c ****     if(DWT->CYCCNT)
+  77              		.loc 1 37 5 view .LVU18
+  78              		.loc 1 37 11 is_stmt 0 view .LVU19
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s 			page 3
+
+
+  79              		.thumb
+  80              		.syntax unified
+  81 0038 5B68     		ldr	r3, [r3, #4]
+  82              		.loc 1 37 7 view .LVU20
+  83 003a 0BB1     		cbz	r3, .L3
+  38:Core/Src/DWT_Delay.c ****     {
+  39:Core/Src/DWT_Delay.c ****        return 0; /*clock cycle counter started*/
+  84              		.loc 1 39 15 view .LVU21
+  85 003c 1046     		mov	r0, r2
+  86 003e 7047     		bx	lr
+  87              	.L3:
+  40:Core/Src/DWT_Delay.c ****     }
+  41:Core/Src/DWT_Delay.c ****     else
+  42:Core/Src/DWT_Delay.c ****     {
+  43:Core/Src/DWT_Delay.c ****       return 1; /*clock cycle counter not started*/
+  88              		.loc 1 43 14 view .LVU22
+  89 0040 0120     		movs	r0, #1
+  44:Core/Src/DWT_Delay.c ****     }
+  45:Core/Src/DWT_Delay.c **** }
+  90              		.loc 1 45 1 view .LVU23
+  91 0042 7047     		bx	lr
+  92              	.L5:
+  93              		.align	2
+  94              	.L4:
+  95 0044 00ED00E0 		.word	-536810240
+  96              		.cfi_endproc
+  97              	.LFE952:
+  99              		.text
+ 100              	.Letext0:
+ 101              		.file 2 "c:\\users\\kevin\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 102              		.file 3 "c:\\users\\kevin\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 103              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ARM GAS  C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 DWT_Delay.c
+C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s:21     .text.DWT_Delay_Init:0000000000000000 $t
+C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s:27     .text.DWT_Delay_Init:0000000000000000 DWT_Delay_Init
+C:\Users\Kevin\AppData\Local\Temp\ccoSFu3c.s:95     .text.DWT_Delay_Init:0000000000000044 $d
+
+NO UNDEFINED SYMBOLS
