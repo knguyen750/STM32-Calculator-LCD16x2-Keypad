@@ -1,12 +1,13 @@
 # EN525-615-FinalProject
 =======
 # calculator
- Calculator implemented using keypad and LCD display connected to STM32-based microcontroller.
+
+ C++ calculator program running on STM32-based microcontroller leveraging CMSIS and STM32WBxx_HAL_Driver libraries. Inputs and operands provided through a 4x4 keypad and output is displayed via a 16x2 LCD display. 
 
 # Components:
 
- STM32 Microcontroller
+STM32 Microcontroller
+
+16x2 LCD Display
  
- 16x2 LCD Display
- 
- 3x3 Keypad
+4x4 Keypad 

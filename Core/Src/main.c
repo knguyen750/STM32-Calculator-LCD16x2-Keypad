@@ -182,7 +182,7 @@ int main(void)
         first_operand_seen   = 1; // when first operator seen, we know the char buffer for the first operand is constructed 
         first_char_operand_seen   = 0; // flag to know that next operand is new (for strcpy vs. strcat)
       }
-      // "C" keypress: Clear LCD if 
+      // "C" keypress: Clear LCD
       else if ((strcmp(key_char, "C")) == 0) { 
         
         LCD_Home(); // Returns display to original position.
@@ -209,7 +209,7 @@ int main(void)
         LCD_SR();
         disp_pos -= 1;
       }
-      // Bonus feature:# keypress manually shifts display register to left
+      // Bonus feature: * keypress manually shifts display register to left
       else if ((strcmp(key_char, "#")) == 0) {
         LCD_SL();
         disp_pos += 1;
