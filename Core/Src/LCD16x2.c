@@ -18,6 +18,21 @@
 
 //-----[ Alphanumeric LCD 16x2 Routines ]-----
 
+    // LCD Pinout
+    /*
+    GND     = Ground (0V)
+    VCC     = Supply voltage; 5V (4.7V – 5.3V)
+    VO      = Contrast adjustment; the best way is to use a variable resistor such as a potentiometer. The output of the potentiometer is connected to this pin. Rotate the potentiometer knob forward and backward to adjust the LCD contrast.
+    RS      = Selects command register when low, and data register when high
+    R/W     = Low to write to the register; High to read from the register
+    E       = Enable
+    D0-D3   = 4 LSBs of Data Bus
+    D4-D7   = 4 MSBs of Data Bus
+    A       = 5V
+    K       = GND
+    */
+
+
 void LCD_DATA(unsigned char data)
 {
     HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, ((data>>3)&0x01)); // LCD Pin D7
@@ -75,7 +90,7 @@ void LCD_Init()
     HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_RESET); // LCD Pin D5
     HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_RESET); // LCD Pin D4
 
-	// The Init. Procedure As Described In The Datasheet
+	// The Init. Procedure As Described In The HD44780U Datasheet
     LCD_DATA(0x00);
     DWT_Delay_ms(150);
     LCD_CMD(0x03);
